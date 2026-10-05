@@ -1,0 +1,650 @@
+﻿2026-08-20T07:19:42.1344676Z Current runner version: '2.336.0'
+2026-08-20T07:19:42.1351912Z Runner name: 'nsc-runner-16u1pu9bbfqoe'
+2026-08-20T07:19:42.1352724Z Runner group name: 'Default'
+2026-08-20T07:19:42.1353906Z Machine name: '16u1pu9bbfqoe'
+2026-08-20T07:19:42.1372848Z ##[group]Namespace Runner Details
+2026-08-20T07:19:42.1373510Z ID: 16u1pu9bbfqoe
+2026-08-20T07:19:42.1374130Z Operating System: Linux
+2026-08-20T07:19:42.1374712Z Machine Type: 4x8
+2026-08-20T07:19:42.1375288Z Architecture: amd64
+2026-08-20T07:19:42.1376048Z Instance URL: https://cloud.namespace.so/b78085cp9cgui/instance/16u1pu9bbfqoe
+2026-08-20T07:19:42.1376975Z Container Registry: nscr.io/b78085cp9cgui
+2026-08-20T07:19:42.1377596Z ##[endgroup]
+2026-08-20T07:19:42.1378142Z ##[group]Namespace Runner Profile Info
+2026-08-20T07:19:42.1378723Z Tag: namespace-profile-linux-x64-default
+2026-08-20T07:19:42.1379611Z Profile URL: https://cloud.namespace.so/b78085cp9cgui/actions/profile/namespace-profile-linux-x64-default
+2026-08-20T07:19:42.1380778Z Remote Builder: Enabled.
+2026-08-20T07:19:42.1381686Z User Bundled Cache: github-namespace-profile-linux-x64-default-oxc-project-oxc with 50GB.
+2026-08-20T07:19:42.1382435Z Git Mirror Cache: Enabled.
+2026-08-20T07:19:42.1383020Z Runner Tools Cache: Enabled.
+2026-08-20T07:19:42.1383611Z GitHub Actions Cache: Enabled.
+2026-08-20T07:19:42.1384312Z ##[endgroup]
+2026-08-20T07:19:42.1385122Z ##[group]GITHUB_TOKEN Permissions
+2026-08-20T07:19:42.1386880Z Metadata: read
+2026-08-20T07:19:42.1387446Z ##[endgroup]
+2026-08-20T07:19:42.1390447Z Secret source: Actions
+2026-08-20T07:19:42.1391576Z Prepare workflow directory
+2026-08-20T07:19:42.1725983Z Prepare all required actions
+2026-08-20T07:19:42.1772770Z Getting action download info
+2026-08-20T07:19:42.3260099Z Download action repository 'taiki-e/checkout-action@7d1e50e93dc4fb3bba58f85018fadf77898aee8b' (SHA:7d1e50e93dc4fb3bba58f85018fadf77898aee8b)
+2026-08-20T07:19:42.3681610Z Download action repository 'namespacelabs/nscloud-cache-action@c5f8dab7560444c4bf8dbc64f1b203431873c547' (SHA:c5f8dab7560444c4bf8dbc64f1b203431873c547)
+2026-08-20T07:19:42.4589683Z Complete job name: Doc
+2026-08-20T07:19:42.4897410Z A job started hook has been configured by the self-hosted runner administrator
+2026-08-20T07:19:42.4998770Z ##[group]Run '/opt/namespace/mounted_prejob.sh'
+2026-08-20T07:19:42.5012712Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-08-20T07:19:42.5013644Z ##[endgroup]
+2026-08-20T07:19:42.5460386Z 
+2026-08-20T07:19:42.5461984Z Your GitHub Actions job is running on Namespace!
+2026-08-20T07:19:42.5462521Z 
+2026-08-20T07:19:42.5463086Z You can find logs, metrics and other resources at:
+2026-08-20T07:19:42.5464911Z 
+2026-08-20T07:19:42.5465610Z https://cloud.namespace.so/b78085cp9cgui/instance/16u1pu9bbfqoe
+2026-08-20T07:19:42.5467402Z 
+2026-08-20T07:19:42.5467862Z More of this workflow:
+2026-08-20T07:19:42.5468150Z 
+2026-08-20T07:19:42.5469008Z https://cloud.namespace.so/b78085cp9cgui/actions/repo/oxc-project/oxc/run/32343479232
+2026-08-20T07:19:42.5469640Z 
+2026-08-20T07:19:42.5642347Z ##[group]Run taiki-e/checkout-action@7d1e50e93dc4fb3bba58f85018fadf77898aee8b
+2026-08-20T07:19:42.5643245Z env:
+2026-08-20T07:19:42.5643899Z   INSTA_REQUIRE_FULL_MATCH: 1
+2026-08-20T07:19:42.5644583Z   TOOLCHAIN: nightly-2026-04-01
+2026-08-20T07:19:42.5645109Z   NSC_CONTAINER_REGISTRY: nscr.io/b78085cp9cgui
+2026-08-20T07:19:42.5645771Z ##[endgroup]
+2026-08-20T07:19:42.5688198Z ##[start-action display=Run set -eu;id=__taiki-e_checkout-action.__run]
+2026-08-20T07:19:42.5761543Z ##[group]Run set -eu
+2026-08-20T07:19:42.5762199Z [36;1mset -eu[0m
+2026-08-20T07:19:42.5762740Z [36;1mif ! command -v bash >/dev/null; then[0m
+2026-08-20T07:19:42.5763613Z [36;1m  if grep -Eq '^ID=alpine' /etc/os-release; then[0m
+2026-08-20T07:19:42.5764604Z [36;1m    printf '::group::Install packages required for checkout-action (bash)\n'[0m
+2026-08-20T07:19:42.5765481Z [36;1m    # NB: sync with apk_install in main.sh[0m
+2026-08-20T07:19:42.5767150Z [36;1m    if command -v sudo >/dev/null; then[0m
+2026-08-20T07:19:42.5768243Z [36;1m      sudo apk --no-cache add bash[0m
+2026-08-20T07:19:42.5768854Z [36;1m    elif command -v doas >/dev/null; then[0m
+2026-08-20T07:19:42.5769493Z [36;1m      doas apk --no-cache add bash[0m
+2026-08-20T07:19:42.5770441Z [36;1m    else[0m
+2026-08-20T07:19:42.5771201Z [36;1m      apk --no-cache add bash[0m
+2026-08-20T07:19:42.5772104Z [36;1m    fi[0m
+2026-08-20T07:19:42.5772833Z [36;1m    printf '::endgroup::\n'[0m
+2026-08-20T07:19:42.5773944Z [36;1m  elif grep -Eq '^ID_LIKE=.*openwrt' /etc/os-release; then[0m
+2026-08-20T07:19:42.5776090Z [36;1m    printf '::group::Install packages required for checkout-action (bash)\n'[0m
+2026-08-20T07:19:42.5778141Z [36;1m    # NB: sync with opkg_install in main.sh[0m
+2026-08-20T07:19:42.5779089Z [36;1m    if command -v sudo >/dev/null; then[0m
+2026-08-20T07:19:42.5780582Z [36;1m      sudo mkdir -p /var/lock[0m
+2026-08-20T07:19:42.5781698Z [36;1m      sudo opkg update[0m
+2026-08-20T07:19:42.5783039Z [36;1m      sudo opkg install bash[0m
+2026-08-20T07:19:42.5784266Z [36;1m    else[0m
+2026-08-20T07:19:42.5784968Z [36;1m      mkdir -p /var/lock[0m
+2026-08-20T07:19:42.5785678Z [36;1m      opkg update[0m
+2026-08-20T07:19:42.5787512Z [36;1m      opkg install bash[0m
+2026-08-20T07:19:42.5789254Z [36;1m    fi[0m
+2026-08-20T07:19:42.5790495Z [36;1m    printf '::endgroup::\n'[0m
+2026-08-20T07:19:42.5791120Z [36;1m  else[0m
+2026-08-20T07:19:42.5791875Z [36;1m    printf '::error::checkout-action requires bash\n'[0m
+2026-08-20T07:19:42.5792498Z [36;1m    exit 1[0m
+2026-08-20T07:19:42.5792959Z [36;1m  fi[0m
+2026-08-20T07:19:42.5793577Z [36;1mfi[0m
+2026-08-20T07:19:42.5794212Z [36;1mbash --noprofile --norc "${GITHUB_ACTION_PATH:?}/main.sh"[0m
+2026-08-20T07:19:42.5861723Z shell: /usr/bin/sh -e {0}
+2026-08-20T07:19:42.5862309Z env:
+2026-08-20T07:19:42.5862959Z   INSTA_REQUIRE_FULL_MATCH: 1
+2026-08-20T07:19:42.5863593Z   TOOLCHAIN: nightly-2026-04-01
+2026-08-20T07:19:42.5864362Z   NSC_CONTAINER_REGISTRY: nscr.io/b78085cp9cgui
+2026-08-20T07:19:42.5865090Z ##[endgroup]
+2026-08-20T07:19:42.5981365Z ##[group]Show hardware information (lscpu)
+2026-08-20T07:19:42.6012887Z Architecture:                            x86_64
+2026-08-20T07:19:42.6013407Z CPU op-mode(s):                          32-bit, 64-bit
+2026-08-20T07:19:42.6014093Z Address sizes:                           48 bits physical, 48 bits virtual
+2026-08-20T07:19:42.6014635Z Byte Order:                              Little Endian
+2026-08-20T07:19:42.6015341Z CPU(s):                                  4
+2026-08-20T07:19:42.6016066Z On-line CPU(s) list:                     0-3
+2026-08-20T07:19:42.6016790Z Vendor ID:                               AuthenticAMD
+2026-08-20T07:19:42.6017529Z Model name:                              AMD EPYC
+2026-08-20T07:19:42.6018353Z CPU family:                              25
+2026-08-20T07:19:42.6019011Z Model:                                   97
+2026-08-20T07:19:42.6019752Z Thread(s) per core:                      2
+2026-08-20T07:19:42.6020758Z Core(s) per socket:                      2
+2026-08-20T07:19:42.6021478Z Socket(s):                               1
+2026-08-20T07:19:42.6022132Z Stepping:                                2
+2026-08-20T07:19:42.6022763Z BogoMIPS:                                8384.18
+2026-08-20T07:19:42.6027251Z Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core ssbd perfmon_v2 ibrs ibpb stibp ibrs_enhanced vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves avx512_bf16 clzero xsaveerptr wbnoinvd arat npt lbrv nrip_save tsc_scale vmcb_clean flushbyasid pausefilter pfthreshold vgif vnmi avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm flush_l1d
+2026-08-20T07:19:42.6031332Z Virtualization:                          AMD-V
+2026-08-20T07:19:42.6032048Z Hypervisor vendor:                       KVM
+2026-08-20T07:19:42.6032661Z Virtualization type:                     full
+2026-08-20T07:19:42.6033343Z L1d cache:                               64 KiB (2 instances)
+2026-08-20T07:19:42.6034162Z L1i cache:                               64 KiB (2 instances)
+2026-08-20T07:19:42.6034847Z L2 cache:                                2 MiB (2 instances)
+2026-08-20T07:19:42.6035550Z L3 cache:                                96 MiB (1 instance)
+2026-08-20T07:19:42.6036150Z NUMA node(s):                            1
+2026-08-20T07:19:42.6036778Z NUMA node0 CPU(s):                       0-3
+2026-08-20T07:19:42.6037592Z Vulnerability Gather data sampling:      Not affected
+2026-08-20T07:19:42.6038525Z Vulnerability Ghostwrite:                Not affected
+2026-08-20T07:19:42.6039359Z Vulnerability Indirect target selection: Not affected
+2026-08-20T07:19:42.6040034Z Vulnerability Itlb multihit:             Not affected
+2026-08-20T07:19:42.6041000Z Vulnerability L1tf:                      Not affected
+2026-08-20T07:19:42.6041760Z Vulnerability Mds:                       Not affected
+2026-08-20T07:19:42.6042378Z Vulnerability Meltdown:                  Not affected
+2026-08-20T07:19:42.6042977Z Vulnerability Mmio stale data:           Not affected
+2026-08-20T07:19:42.6044128Z Vulnerability Old microcode:             Not affected
+2026-08-20T07:19:42.6045001Z Vulnerability Reg file data sampling:    Not affected
+2026-08-20T07:19:42.6045790Z Vulnerability Retbleed:                  Not affected
+2026-08-20T07:19:42.6046546Z Vulnerability Spec rstack overflow:      Mitigation; Safe RET
+2026-08-20T07:19:42.6047338Z Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+2026-08-20T07:19:42.6048332Z Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+2026-08-20T07:19:42.6049599Z Vulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; STIBP always-on; PBRSB-eIBRS Not affected; BHI Not affected
+2026-08-20T07:19:42.6050632Z Vulnerability Srbds:                     Not affected
+2026-08-20T07:19:42.6051313Z Vulnerability Tsa:                       Vulnerable: No microcode
+2026-08-20T07:19:42.6051975Z Vulnerability Tsx async abort:           Not affected
+2026-08-20T07:19:42.6052658Z Vulnerability Vmscape:                   Not affected
+2026-08-20T07:19:42.6054171Z ##[endgroup]
+2026-08-20T07:19:42.6055067Z ##[group]git version
+2026-08-20T07:19:42.6096588Z git version 2.54.0
+2026-08-20T07:19:42.6099129Z ##[endgroup]
+2026-08-20T07:19:42.6100607Z ##[group]git config --global --add safe.directory /home/runner/work/oxc/oxc
+2026-08-20T07:19:42.6111218Z ##[endgroup]
+2026-08-20T07:19:42.6111949Z ##[group]git init
+2026-08-20T07:19:42.6150793Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-08-20T07:19:42.6152190Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-08-20T07:19:42.6153148Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-08-20T07:19:42.6154038Z hint: call:
+2026-08-20T07:19:42.6154528Z hint:
+2026-08-20T07:19:42.6155226Z hint: 	git config --global init.defaultBranch <name>
+2026-08-20T07:19:42.6155851Z hint:
+2026-08-20T07:19:42.6156270Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-08-20T07:19:42.6156920Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-08-20T07:19:42.6157429Z hint:
+2026-08-20T07:19:42.6157740Z hint: 	git branch -m <name>
+2026-08-20T07:19:42.6158148Z hint:
+2026-08-20T07:19:42.6158635Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-08-20T07:19:42.6159488Z Initialized empty Git repository in /home/runner/work/oxc/oxc/.git/
+2026-08-20T07:19:42.6160326Z ##[endgroup]
+2026-08-20T07:19:42.6161149Z ##[group]git remote add origin https://github.com/oxc-project/oxc
+2026-08-20T07:19:42.6173331Z ##[endgroup]
+2026-08-20T07:19:42.6175316Z ##[group]git config --local gc.auto 0
+2026-08-20T07:19:42.6194514Z ##[endgroup]
+2026-08-20T07:19:42.6206612Z ##[group]git fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +2ba899d6b290ec10b6c6265673d7544b64588c30:refs/pull/25933/merge
+2026-08-20T07:19:43.1073705Z From https://github.com/oxc-project/oxc
+2026-08-20T07:19:43.1075151Z  * [new ref]         2ba899d6b290ec10b6c6265673d7544b64588c30 -> refs/pull/25933/merge
+2026-08-20T07:19:43.1099341Z ##[endgroup]
+2026-08-20T07:19:43.1101516Z ##[group]git checkout --force refs/pull/25933/merge
+2026-08-20T07:19:43.8825111Z Note: switching to 'refs/pull/25933/merge'.
+2026-08-20T07:19:43.8825508Z 
+2026-08-20T07:19:43.8825800Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-08-20T07:19:43.8826409Z changes and commit them, and you can discard any commits you make in this
+2026-08-20T07:19:43.8826834Z state without impacting any branches by switching back to a branch.
+2026-08-20T07:19:43.8827123Z 
+2026-08-20T07:19:43.8827284Z If you want to create a new branch to retain commits you create, you may
+2026-08-20T07:19:43.8827779Z do so (now or later) by using -c with the switch command. Example:
+2026-08-20T07:19:43.8828024Z 
+2026-08-20T07:19:43.8828228Z   git switch -c <new-branch-name>
+2026-08-20T07:19:43.8828393Z 
+2026-08-20T07:19:43.8828617Z Or undo this operation with:
+2026-08-20T07:19:43.8828803Z 
+2026-08-20T07:19:43.8829241Z   git switch -
+2026-08-20T07:19:43.8829431Z 
+2026-08-20T07:19:43.8829654Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-08-20T07:19:43.8829973Z 
+2026-08-20T07:19:43.8830349Z HEAD is now at 2ba899d Merge 975181512c17bd2cc0438b80851d0c64e6bdc4de into f09c8abf38610f66eaf66aa5be6163f739f64f76
+2026-08-20T07:19:43.8843554Z ##[endgroup]
+2026-08-20T07:19:43.8844751Z ##[group]git config --global --add safe.directory /home/runner/work/oxc/oxc
+2026-08-20T07:19:43.8862548Z ##[endgroup]
+2026-08-20T07:19:43.8878384Z ##[end-action id=__taiki-e_checkout-action.__run;outcome=success;conclusion=success;duration_ms=1318]
+2026-08-20T07:19:43.8883036Z ##[start-action display=Run Set-StrictMode -Version Latest;id=__taiki-e_checkout-action.__run_2]
+2026-08-20T07:19:43.8895585Z ##[end-action id=__taiki-e_checkout-action.__run_2;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-08-20T07:19:43.9001078Z ##[group]Run namespacelabs/nscloud-cache-action@c5f8dab7560444c4bf8dbc64f1b203431873c547
+2026-08-20T07:19:43.9001766Z with:
+2026-08-20T07:19:43.9002430Z   path: /home/runner/.rustup
+2026-08-20T07:19:43.9002925Z   cache: rust
+2026-08-20T07:19:43.9005068Z   github-token: ***
+2026-08-20T07:19:43.9005598Z   fail-on-cache-miss: false
+2026-08-20T07:19:43.9006090Z env:
+2026-08-20T07:19:43.9006613Z   INSTA_REQUIRE_FULL_MATCH: 1
+2026-08-20T07:19:43.9007131Z   TOOLCHAIN: nightly-2026-04-01
+2026-08-20T07:19:43.9007632Z   NSC_CONTAINER_REGISTRY: nscr.io/b78085cp9cgui
+2026-08-20T07:19:43.9008221Z ##[endgroup]
+2026-08-20T07:19:44.0242651Z Found Namespace cross-invocation cache at /cache.
+2026-08-20T07:19:44.0332256Z Using existing spacectl 0.12.3 at /nsc/powertoys/spacectl
+2026-08-20T07:19:53.3364838Z Cache modes used: rust.
+2026-08-20T07:19:53.3368419Z Mounted 5 cache paths.
+2026-08-20T07:19:53.3369210Z All cache paths found and restored.
+2026-08-20T07:19:53.3369927Z Total available cache space is 80G, and 32G have been used.
+2026-08-20T07:19:53.3476749Z ##[group]Run rustup toolchain install "${TOOLCHAIN}" --profile minimal --component rust-docs
+2026-08-20T07:19:53.3477547Z [36;1mrustup toolchain install "${TOOLCHAIN}" --profile minimal --component rust-docs[0m
+2026-08-20T07:19:53.3491201Z shell: /usr/bin/bash -e {0}
+2026-08-20T07:19:53.3491526Z env:
+2026-08-20T07:19:53.3491758Z   INSTA_REQUIRE_FULL_MATCH: 1
+2026-08-20T07:19:53.3492238Z   TOOLCHAIN: nightly-2026-04-01
+2026-08-20T07:19:53.3492611Z   NSC_CONTAINER_REGISTRY: nscr.io/b78085cp9cgui
+2026-08-20T07:19:53.3492889Z ##[endgroup]
+2026-08-20T07:19:53.3630734Z info: syncing channel updates for nightly-2026-04-01-x86_64-unknown-linux-gnu
+2026-08-20T07:19:53.5885904Z info: latest update on 2026-04-01 for version 1.96.0-nightly (48cc71ee8 2026-03-31)
+2026-08-20T07:19:53.5886563Z info: downloading 4 components
+2026-08-20T07:20:02.6517059Z 
+2026-08-20T07:20:02.6587136Z   nightly-2026-04-01-x86_64-unknown-linux-gnu installed - rustc 1.96.0-nightly (48cc71ee8 2026-03-31)
+2026-08-20T07:20:02.6588096Z 
+2026-08-20T07:20:02.8110535Z info: default toolchain set to nightly-2026-04-01-x86_64-unknown-linux-gnu
+2026-08-20T07:20:02.8241910Z ##[group]Run RUSTDOCFLAGS='-D warnings' cargo +"${TOOLCHAIN}" doc --no-deps --document-private-items --all-features -Zrustdoc-mergeable-info
+2026-08-20T07:20:02.8242633Z [36;1mRUSTDOCFLAGS='-D warnings' cargo +"${TOOLCHAIN}" doc --no-deps --document-private-items --all-features -Zrustdoc-mergeable-info[0m
+2026-08-20T07:20:02.8255002Z shell: /usr/bin/bash -e {0}
+2026-08-20T07:20:02.8255282Z env:
+2026-08-20T07:20:02.8255488Z   INSTA_REQUIRE_FULL_MATCH: 1
+2026-08-20T07:20:02.8255787Z   TOOLCHAIN: nightly-2026-04-01
+2026-08-20T07:20:02.8256091Z   NSC_CONTAINER_REGISTRY: nscr.io/b78085cp9cgui
+2026-08-20T07:20:02.8256358Z ##[endgroup]
+2026-08-20T07:20:03.6494133Z    Compiling quote v1.0.47
+2026-08-20T07:20:03.6495822Z    Compiling proc-macro2 v1.0.107
+2026-08-20T07:20:03.6496591Z    Compiling unicode-ident v1.0.24
+2026-08-20T07:20:03.6496874Z    Compiling serde_core v1.0.229
+2026-08-20T07:20:03.6925223Z    Compiling serde v1.0.229
+2026-08-20T07:20:03.7829890Z    Compiling zmij v1.0.21
+2026-08-20T07:20:03.8238344Z     Checking cfg-if v1.0.4
+2026-08-20T07:20:03.8388327Z     Checking memchr v2.8.3
+2026-08-20T07:20:03.8937743Z     Checking allocator-api2 v0.2.21
+2026-08-20T07:20:04.0397982Z     Checking foldhash v0.2.0
+2026-08-20T07:20:04.0826506Z     Checking itoa v1.0.18
+2026-08-20T07:20:04.1019808Z    Compiling crossbeam-utils v0.8.21
+2026-08-20T07:20:04.1298406Z    Compiling syn v2.0.119
+2026-08-20T07:20:04.1358171Z    Compiling syn v3.0.3
+2026-08-20T07:20:04.2214766Z     Checking hashbrown v0.17.1
+2026-08-20T07:20:04.4826202Z    Compiling siphasher v1.0.3
+2026-08-20T07:20:04.5522929Z    Compiling phf_shared v0.14.0
+2026-08-20T07:20:04.7388922Z    Compiling crossbeam-epoch v0.9.20
+2026-08-20T07:20:04.8277930Z     Checking equivalent v1.0.2
+2026-08-20T07:20:04.8469800Z    Compiling rustversion v1.0.22
+2026-08-20T07:20:04.9201595Z     Checking crossbeam-deque v0.8.6
+2026-08-20T07:20:04.9860823Z    Compiling rayon-core v1.13.0
+2026-08-20T07:20:04.9986618Z     Checking either v1.16.0
+2026-08-20T07:20:05.2503357Z    Compiling phf v0.14.0
+2026-08-20T07:20:05.3169216Z     Checking rayon v1.12.0
+2026-08-20T07:20:05.4180552Z    Compiling serde_json v1.0.151
+2026-08-20T07:20:05.5061053Z     Checking rustc-hash v2.1.3
+2026-08-20T07:20:05.5428918Z     Checking str_indices v0.4.4
+2026-08-20T07:20:05.6106505Z     Checking aho-corasick v1.1.4
+2026-08-20T07:20:06.0108144Z    Compiling dragonbox_ecma v0.1.12
+2026-08-20T07:20:06.0168315Z    Compiling serde_derive v1.0.229
+2026-08-20T07:20:06.1138197Z    Compiling oxc_ast_macros v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_ast_macros)
+2026-08-20T07:20:06.2893485Z     Checking indexmap v2.14.0
+2026-08-20T07:20:06.7244693Z     Checking regex-syntax v0.8.11
+2026-08-20T07:20:07.0486682Z    Compiling serde_derive_internals v0.29.1
+2026-08-20T07:20:07.1075309Z    Compiling oxc-schemars v0.9.1
+2026-08-20T07:20:07.1988752Z     Checking castaway v0.2.4
+2026-08-20T07:20:07.2220331Z     Checking static_assertions v1.1.0
+2026-08-20T07:20:07.2382052Z     Checking dyn-clone v1.0.20
+2026-08-20T07:20:07.2636455Z    Compiling libc v0.2.186
+2026-08-20T07:20:07.4346564Z     Checking percent-encoding v2.3.2
+2026-08-20T07:20:07.4769654Z     Checking cow-utils v0.1.3
+2026-08-20T07:20:07.4975668Z    Compiling oxc_schemars_derive v0.8.26
+2026-08-20T07:20:07.5266428Z     Checking regex-automata v0.4.18
+2026-08-20T07:20:07.9566568Z     Checking smallvec v1.15.2
+2026-08-20T07:20:08.0560169Z     Checking ropey v1.6.1
+2026-08-20T07:20:08.2031516Z     Checking compact_str v0.10.0
+2026-08-20T07:20:08.2146315Z     Checking bitflags v2.13.1
+2026-08-20T07:20:08.2766711Z     Checking unicode-segmentation v1.13.3
+2026-08-20T07:20:08.3173543Z     Checking oxc_data_structures v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_data_structures)
+2026-08-20T07:20:08.4345049Z     Checking unicode-width v0.2.2
+2026-08-20T07:20:08.4742238Z     Checking regex v1.13.1
+2026-08-20T07:20:08.4776495Z     Checking oxc_estree v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_estree)
+2026-08-20T07:20:08.5147226Z    Compiling owo-colors v4.3.0
+2026-08-20T07:20:08.5677305Z     Checking oxc_allocator v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_allocator)
+2026-08-20T07:20:08.6471607Z    Compiling fastrand v2.4.1
+2026-08-20T07:20:08.7036891Z    Compiling phf_generator v0.14.0
+2026-08-20T07:20:08.7763880Z     Checking smawk v0.3.3
+2026-08-20T07:20:08.8067936Z     Checking unicode-linebreak v0.1.5
+2026-08-20T07:20:08.8951479Z    Compiling phf_macros v0.14.0
+2026-08-20T07:20:08.8954625Z     Checking textwrap v0.16.2
+2026-08-20T07:20:08.9701559Z     Checking bytecount v0.6.9
+2026-08-20T07:20:08.9929592Z     Checking oxc_str v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_str)
+2026-08-20T07:20:08.9987047Z     Checking unicode-id-start v1.4.0
+2026-08-20T07:20:09.0009818Z     Checking nonmax v0.5.5
+2026-08-20T07:20:09.0246578Z    Compiling autocfg v1.5.1
+2026-08-20T07:20:09.0903395Z     Checking oxc_index v5.0.0
+2026-08-20T07:20:09.1849335Z     Checking oxc_span v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_span)
+2026-08-20T07:20:09.2186495Z    Compiling thiserror v2.0.18
+2026-08-20T07:20:09.2617395Z    Compiling num-traits v0.2.19
+2026-08-20T07:20:09.3277941Z     Checking oxc_diagnostics v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_diagnostics)
+2026-08-20T07:20:09.3490790Z    Compiling thiserror-impl v2.0.18
+2026-08-20T07:20:09.4097029Z     Checking oxc_syntax v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_syntax)
+2026-08-20T07:20:09.6027234Z     Checking oxc_regular_expression v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_regular_expression)
+2026-08-20T07:20:09.7426669Z     Checking adler2 v2.0.1
+2026-08-20T07:20:09.7794331Z     Checking miniz_oxide v0.9.1
+2026-08-20T07:20:09.8796119Z     Checking num-integer v0.1.46
+2026-08-20T07:20:09.9734698Z     Checking num-bigint v0.5.1
+2026-08-20T07:20:10.0607746Z     Checking oxc_ast v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_ast)
+2026-08-20T07:20:10.1233321Z     Checking cobs v0.3.0
+2026-08-20T07:20:10.2159292Z     Checking postcard v1.1.3
+2026-08-20T07:20:10.3028082Z     Checking itertools v0.15.0
+2026-08-20T07:20:10.3466887Z     Checking oxc-browserslist v5.0.1
+2026-08-20T07:20:10.4962509Z     Checking foldhash v0.1.5
+2026-08-20T07:20:10.5398458Z     Checking hashbrown v0.15.5
+2026-08-20T07:20:10.5960310Z     Checking oxc_compat v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_compat)
+2026-08-20T07:20:10.7365021Z     Checking fixedbitset v0.5.7
+2026-08-20T07:20:10.7744567Z    Compiling napi-build v2.4.1
+2026-08-20T07:20:10.8145962Z     Checking petgraph v0.8.3
+2026-08-20T07:20:10.8666090Z     Checking self_cell v1.3.0
+2026-08-20T07:20:10.8914168Z     Checking once_cell v1.21.4
+2026-08-20T07:20:10.9458198Z     Checking pin-project-lite v0.2.17
+2026-08-20T07:20:10.9519313Z    Compiling seq-macro v0.3.6
+2026-08-20T07:20:10.9673769Z     Checking futures-sink v0.3.34
+2026-08-20T07:20:10.9944609Z     Checking futures-core v0.3.34
+2026-08-20T07:20:11.0345953Z    Compiling shlex v2.0.1
+2026-08-20T07:20:11.0985877Z    Compiling find-msvc-tools v0.1.9
+2026-08-20T07:20:11.1364097Z     Checking futures-channel v0.3.34
+2026-08-20T07:20:11.1916722Z    Compiling cc v1.2.65
+2026-08-20T07:20:11.2144138Z    Compiling futures-macro v0.3.34
+2026-08-20T07:20:11.6391519Z     Checking oxc_cfg v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_cfg)
+2026-08-20T07:20:11.7368125Z     Checking slab v0.4.12
+2026-08-20T07:20:11.8020035Z     Checking futures-io v0.3.34
+2026-08-20T07:20:11.8446916Z     Checking futures-task v0.3.34
+2026-08-20T07:20:11.8530567Z    Compiling tokio-macros v2.7.0
+2026-08-20T07:20:11.9106864Z     Checking futures-util v0.3.34
+2026-08-20T07:20:12.3354855Z     Checking tokio v1.53.1
+2026-08-20T07:20:13.2059467Z     Checking log v0.4.33
+2026-08-20T07:20:13.6017524Z     Checking futures-executor v0.3.34
+2026-08-20T07:20:13.6947519Z     Checking futures v0.3.34
+2026-08-20T07:20:13.7098336Z    Compiling convert_case v0.11.0
+2026-08-20T07:20:13.8765543Z    Compiling napi v3.12.1
+2026-08-20T07:20:13.9189120Z     Checking libloading v0.9.0
+2026-08-20T07:20:13.9801516Z    Compiling semver v1.0.28
+2026-08-20T07:20:14.1712908Z    Compiling napi-derive-backend v6.1.2
+2026-08-20T07:20:14.1941959Z     Checking napi-sys v3.3.0
+2026-08-20T07:20:14.2091725Z     Checking oxc_ecmascript v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_ecmascript)
+2026-08-20T07:20:14.2372016Z     Checking oxc_ast_visit v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_ast_visit)
+2026-08-20T07:20:14.3164941Z     Checking oxc_jsdoc v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_jsdoc)
+2026-08-20T07:20:14.8146267Z     Checking oxc_parser v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_parser)
+2026-08-20T07:20:15.2497871Z     Checking oxc_semantic v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_semantic)
+2026-08-20T07:20:16.0543153Z     Checking nohash-hasher v0.2.0
+2026-08-20T07:20:16.0700643Z    Compiling ctor v1.0.7
+2026-08-20T07:20:16.2568942Z    Compiling oxc_formatter_core v0.64.0 (/home/runner/work/oxc/oxc/crates/oxc_formatter_core)
+2026-08-20T07:20:16.4829699Z    Compiling napi-derive v3.6.3
+2026-08-20T07:20:17.1006152Z    Compiling oxc_formatter_tests v0.62.0 (/home/runner/work/oxc/oxc/crates/oxc_formatter_tests)
+2026-08-20T07:20:17.6967868Z    Compiling oxc_sourcemap v8.1.2
+2026-08-20T07:20:17.7983220Z    Compiling synstructure v0.13.2
+2026-08-20T07:20:18.1030797Z     Checking vsimd v0.8.0
+2026-08-20T07:20:18.2843539Z     Checking outref v0.5.2
+2026-08-20T07:20:18.3154748Z     Checking base64-simd v0.8.0
+2026-08-20T07:20:18.4255713Z     Checking oxc_traverse v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_traverse)
+2026-08-20T07:20:18.6671270Z     Checking json-escape-simd v3.1.0
+2026-08-20T07:20:18.9960996Z    Compiling ref-cast v1.0.25
+2026-08-20T07:20:19.0524735Z     Checking base64 v0.23.1
+2026-08-20T07:20:19.1070091Z     Checking bytes v1.12.0
+2026-08-20T07:20:19.1762374Z    Compiling httparse v1.10.1
+2026-08-20T07:20:19.3135129Z    Compiling zerofrom-derive v0.1.7
+2026-08-20T07:20:19.4828700Z    Compiling ref-cast-impl v1.0.25
+2026-08-20T07:20:19.7853008Z     Checking arrayvec v0.7.8
+2026-08-20T07:20:19.8582448Z     Checking fast-glob v1.1.0
+2026-08-20T07:20:19.9763310Z     Checking zerofrom v0.1.8
+2026-08-20T07:20:20.0105742Z    Compiling yoke-derive v0.8.2
+2026-08-20T07:20:20.0464830Z     Checking tracing-core v0.1.36
+2026-08-20T07:20:20.1026173Z    Compiling parking_lot_core v0.9.12
+2026-08-20T07:20:20.1952377Z     Checking stable_deref_trait v1.2.1
+2026-08-20T07:20:20.2126333Z     Checking oxc_codegen v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_codegen)
+2026-08-20T07:20:20.2155401Z     Checking scopeguard v1.2.0
+2026-08-20T07:20:20.2367859Z     Checking lock_api v0.4.14
+2026-08-20T07:20:20.3921509Z    Compiling zerovec-derive v0.11.3
+2026-08-20T07:20:20.4399200Z    Compiling lazy-regex-proc_macros v3.6.1
+2026-08-20T07:20:20.6235947Z     Checking yoke v0.8.3
+2026-08-20T07:20:20.6942851Z    Compiling tracing-attributes v0.1.31
+2026-08-20T07:20:20.7403791Z     Checking hashbrown v0.14.5
+2026-08-20T07:20:20.9927991Z     Checking nodejs-built-in-modules v1.0.0
+2026-08-20T07:20:20.9944560Z     Checking zerovec v0.11.6
+2026-08-20T07:20:21.0038166Z     Checking lazy-regex v3.6.1
+2026-08-20T07:20:21.0131760Z     Checking dashmap v6.2.1
+2026-08-20T07:20:21.1369266Z    Compiling displaydoc v0.2.6
+2026-08-20T07:20:21.2436082Z     Checking same-file v1.0.6
+2026-08-20T07:20:21.2742678Z     Checking walkdir v2.5.0
+2026-08-20T07:20:21.3334690Z     Checking hmac-sha1-compact v1.1.7
+2026-08-20T07:20:21.3623272Z     Checking oxc_mangler v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_mangler)
+2026-08-20T07:20:21.4506605Z     Checking tracing v0.1.44
+2026-08-20T07:20:21.5151621Z    Compiling ring v0.17.14
+2026-08-20T07:20:21.5393709Z    Compiling cmake v0.1.58
+2026-08-20T07:20:21.5440902Z    Compiling oxc_napi v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_napi)
+2026-08-20T07:20:21.5785555Z     Checking getrandom v0.2.17
+2026-08-20T07:20:21.6168389Z     Checking bstr v1.12.3
+2026-08-20T07:20:21.6318162Z     Checking simdutf8 v0.1.5
+2026-08-20T07:20:21.7066788Z    Compiling libmimalloc-sys2 v0.1.60
+2026-08-20T07:20:21.7125702Z     Checking tinystr v0.8.3
+2026-08-20T07:20:21.7871611Z     Checking oxc_transformer v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_transformer)
+2026-08-20T07:20:21.8030739Z     Checking globset v0.4.18
+2026-08-20T07:20:21.8830432Z     Checking hashbrown v0.16.1
+2026-08-20T07:20:21.9157799Z     Checking json-strip-comments v3.1.2
+2026-08-20T07:20:21.9479414Z     Checking ryu v1.0.23
+2026-08-20T07:20:21.9933336Z     Checking writeable v0.6.3
+2026-08-20T07:20:22.0469015Z     Checking zeroize v1.9.0
+2026-08-20T07:20:22.0969031Z    Compiling rustix v1.1.4
+2026-08-20T07:20:22.1563903Z     Checking litemap v0.8.2
+2026-08-20T07:20:22.2329707Z     Checking icu_locale_core v2.2.0
+2026-08-20T07:20:22.2825273Z     Checking halfbrown v0.4.0
+2026-08-20T07:20:22.3910926Z     Checking rustls-pki-types v1.15.0
+2026-08-20T07:20:22.5847774Z     Checking zerotrie v0.2.4
+2026-08-20T07:20:22.6951144Z     Checking oxc_minifier v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_minifier)
+2026-08-20T07:20:23.2906967Z     Checking potential_utf v0.1.5
+2026-08-20T07:20:23.3288968Z     Checking float-cmp v0.10.0
+2026-08-20T07:20:23.3723623Z     Checking seize v0.5.1
+2026-08-20T07:20:23.4553583Z     Checking linux-raw-sys v0.12.1
+2026-08-20T07:20:23.6129895Z     Checking untrusted v0.9.0
+2026-08-20T07:20:23.6400094Z     Checking utf8_iter v1.0.4
+2026-08-20T07:20:23.6651661Z    Compiling icu_normalizer_data v2.2.0
+2026-08-20T07:20:23.6748648Z     Checking is_ci v1.2.0
+2026-08-20T07:20:23.6993559Z    Compiling icu_properties_data v2.2.0
+2026-08-20T07:20:23.7485195Z     Checking supports-color v3.0.2
+2026-08-20T07:20:23.7790861Z     Checking icu_collections v2.2.0
+2026-08-20T07:20:24.5085437Z     Checking papaya v0.2.4
+2026-08-20T07:20:24.6354312Z     Checking value-trait v0.12.1
+2026-08-20T07:20:24.6417021Z     Checking icu_provider v2.2.0
+2026-08-20T07:20:24.6899216Z     Checking ignore v0.4.33
+2026-08-20T07:20:24.7671903Z    Compiling bpaf_derive v0.5.26
+2026-08-20T07:20:24.8821459Z    Compiling rustls v0.23.41
+2026-08-20T07:20:24.9390644Z     Checking simd-json v0.17.0
+2026-08-20T07:20:24.9501212Z     Checking rustls-webpki v0.103.13
+2026-08-20T07:20:25.1727753Z     Checking mimalloc-safe v0.1.64
+2026-08-20T07:20:25.3162492Z     Checking compact_str v0.9.1
+2026-08-20T07:20:25.3266240Z     Checking http v1.4.2
+2026-08-20T07:20:25.3585126Z     Checking similar v3.1.2
+2026-08-20T07:20:25.4559462Z     Checking bpaf v0.9.27
+2026-08-20T07:20:25.5442372Z    Compiling fnv v1.0.7
+2026-08-20T07:20:25.5721803Z     Checking subtle v2.6.1
+2026-08-20T07:20:25.6115031Z     Checking project-root v0.2.2
+2026-08-20T07:20:25.6278512Z    Compiling ident_case v1.0.1
+2026-08-20T07:20:25.6313419Z    Compiling strsim v0.11.1
+2026-08-20T07:20:25.6595283Z     Checking lazy_static v1.5.0
+2026-08-20T07:20:25.6737389Z     Checking ureq-proto v0.6.1
+2026-08-20T07:20:25.7546471Z    Compiling darling_core v0.20.11
+2026-08-20T07:20:25.7874533Z     Checking oxc_resolver v11.24.2
+2026-08-20T07:20:25.8098932Z     Checking icu_normalizer v2.2.0
+2026-08-20T07:20:25.9706352Z     Checking icu_properties v2.2.0
+2026-08-20T07:20:26.2589577Z     Checking oxc_config v0.0.0 (/home/runner/work/oxc/oxc/crates/oxc_config)
+2026-08-20T07:20:26.3638466Z     Checking oxc_transformer_plugins v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_transformer_plugins)
+2026-08-20T07:20:26.4514565Z     Checking webpki-roots v1.0.8
+2026-08-20T07:20:26.4884826Z     Checking console v0.16.4
+2026-08-20T07:20:26.5782659Z     Checking borrow-or-share v0.2.4
+2026-08-20T07:20:26.6025064Z     Checking utf8-zero v0.8.1
+2026-08-20T07:20:26.6412821Z     Checking fluent-uri v0.4.1
+2026-08-20T07:20:26.6465352Z     Checking idna_adapter v1.2.2
+2026-08-20T07:20:26.6865029Z    Compiling oxc_formatter v0.64.0 (/home/runner/work/oxc/oxc/crates/oxc_formatter)
+2026-08-20T07:20:26.8434657Z     Checking oxc_estree_tokens v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_estree_tokens)
+2026-08-20T07:20:26.8917587Z     Checking oxc_isolated_declarations v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_isolated_declarations)
+2026-08-20T07:20:27.0273020Z    Compiling darling_macro v0.20.11
+2026-08-20T07:20:27.0498376Z    Compiling ucd-trie v0.1.7
+2026-08-20T07:20:27.1435866Z     Checking tower-layer v0.3.3
+2026-08-20T07:20:27.2045421Z     Checking tower-service v0.3.3
+2026-08-20T07:20:27.2165328Z     Checking ureq v3.4.0
+2026-08-20T07:20:27.2259285Z     Checking unicode-id v0.3.6
+2026-08-20T07:20:27.2564482Z     Checking sync_wrapper v1.0.2
+2026-08-20T07:20:27.2591039Z     Checking markdown v1.0.0
+2026-08-20T07:20:27.2803663Z     Checking tower v0.5.3
+2026-08-20T07:20:27.3939793Z    Compiling darling v0.20.11
+2026-08-20T07:20:27.4139691Z    Compiling pest v2.8.6
+2026-08-20T07:20:27.6336587Z     Checking ls-types v0.0.3
+2026-08-20T07:20:27.8190540Z     Checking idna v1.1.0
+2026-08-20T07:20:27.9315307Z     Checking tokio-util v0.7.18
+2026-08-20T07:20:28.1091986Z     Checking oxc_react_compiler v0.143.0 (/home/runner/work/oxc/oxc/crates/oxc_react_compiler)
+2026-08-20T07:20:28.1429402Z     Checking javascript-globals v1.5.2
+2026-08-20T07:20:28.2405661Z     Checking form_urlencoded v1.2.2
+2026-08-20T07:20:28.4413466Z     Checking natord v1.0.9
+2026-08-20T07:20:28.5150204Z     Checking url v2.5.8
+2026-08-20T07:20:28.5312341Z    Compiling oxc_macros v0.0.0 (/home/runner/work/oxc/oxc/crates/oxc_macros)
+2026-08-20T07:20:28.7165303Z    Compiling pest_meta v2.8.6
+2026-08-20T07:20:29.3527950Z     Checking oxc_tasks_common v0.0.0 (/home/runner/work/oxc/oxc/tasks/common)
+2026-08-20T07:20:29.4231082Z    Compiling derive_builder_core v0.20.2
+2026-08-20T07:20:29.5429007Z     Checking oxc v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc)
+2026-08-20T07:20:29.6074708Z     Checking rust-lapper v1.3.0
+2026-08-20T07:20:29.6626720Z    Compiling anyhow v1.0.104
+2026-08-20T07:20:29.7845633Z     Checking constcat v0.6.1
+2026-08-20T07:20:29.8065014Z     Checking language-tags v0.3.2
+2026-08-20T07:20:29.9383250Z    Compiling derive_builder_macro v0.20.2
+2026-08-20T07:20:30.1246887Z    Compiling pest_generator v2.8.6
+2026-08-20T07:20:30.5164914Z     Checking sharded-slab v0.1.7
+2026-08-20T07:20:30.7464278Z     Checking tracing-log v0.2.0
+2026-08-20T07:20:30.7999909Z     Checking thread_local v1.1.9
+2026-08-20T07:20:30.9354721Z     Checking nu-ansi-term v0.50.3
+2026-08-20T07:20:31.0710059Z     Checking num-modular v0.6.4
+2026-08-20T07:20:31.3721372Z    Compiling zerocopy v0.8.52
+2026-08-20T07:20:31.5655013Z     Checking num-order v1.2.0
+2026-08-20T07:20:31.8474164Z     Checking oxc_linter v1.79.0 (/home/runner/work/oxc/oxc/crates/oxc_linter)
+2026-08-20T07:20:32.3364797Z     Checking tracing-subscriber v0.3.23
+2026-08-20T07:20:32.5353001Z     Checking tower-lsp-server v0.23.0
+2026-08-20T07:20:32.7940567Z    Compiling pest_derive v2.8.6
+2026-08-20T07:20:33.1492200Z     Checking oxc_language_server v1.41.0 (/home/runner/work/oxc/oxc/crates/oxc_language_server)
+2026-08-20T07:20:33.1659479Z     Checking derive_builder v0.20.2
+2026-08-20T07:20:33.2819301Z    Compiling oxc_formatter_css v0.64.0 (/home/runner/work/oxc/oxc/crates/oxc_formatter_css)
+2026-08-20T07:20:33.4447379Z    Compiling oxc_formatter_json v0.64.0 (/home/runner/work/oxc/oxc/crates/oxc_formatter_json)
+2026-08-20T07:20:33.5992633Z    Compiling oxc_formatter_graphql v0.64.0 (/home/runner/work/oxc/oxc/crates/oxc_formatter_graphql)
+2026-08-20T07:20:33.6784576Z    Compiling oxc_formatter_yaml v0.64.0 (/home/runner/work/oxc/oxc/crates/oxc_formatter_yaml)
+2026-08-20T07:20:33.7572724Z    Compiling zerocopy-derive v0.8.52
+2026-08-20T07:20:33.8447822Z    Compiling cfg_aliases v0.2.1
+2026-08-20T07:20:33.8666062Z    Compiling getrandom v0.4.3
+2026-08-20T07:20:33.9785949Z    Compiling nix v0.31.3
+2026-08-20T07:20:34.1656310Z     Checking handlebars v6.4.4
+2026-08-20T07:20:34.7192464Z     Checking oxc-graphql-parser v0.0.9
+2026-08-20T07:20:34.9193368Z     Checking oxc-css-parser v0.0.11
+2026-08-20T07:20:35.8843530Z     Checking oxc-yaml-parser v0.0.5
+2026-08-20T07:20:35.9212870Z    Compiling libm v0.2.16
+2026-08-20T07:20:36.0234114Z     Checking pico-args v0.5.0
+2026-08-20T07:20:36.1217561Z    Compiling codspeed v4.7.0
+2026-08-20T07:20:36.2519651Z    Compiling oxfmt v0.64.0 (/home/runner/work/oxc/oxc/apps/oxfmt)
+2026-08-20T07:20:36.3032050Z    Compiling oxlint v1.79.0 (/home/runner/work/oxc/oxc/apps/oxlint)
+2026-08-20T07:20:36.3503572Z     Checking approx v0.5.1
+2026-08-20T07:20:36.3961769Z     Checking encoding_rs v0.8.35
+2026-08-20T07:20:36.4002116Z    Compiling prettyplease v0.3.0
+2026-08-20T07:20:36.5128182Z    Compiling crc32fast v1.5.0
+2026-08-20T07:20:36.6264450Z     Checking ciborium-io v0.2.2
+2026-08-20T07:20:36.6540520Z     Checking arraydeque v0.5.1
+2026-08-20T07:20:36.7434171Z     Checking saphyr-parser v0.0.11
+2026-08-20T07:20:36.8785669Z     Checking half v2.7.1
+2026-08-20T07:20:36.9649670Z     Checking statrs v0.18.0
+2026-08-20T07:20:37.0379950Z     Checking ciborium-ll v0.2.2
+2026-08-20T07:20:37.1841375Z     Checking tempfile v3.27.0
+2026-08-20T07:20:38.3633585Z     Checking colored v2.2.0
+2026-08-20T07:20:38.4612673Z     Checking editorconfig-parser v0.0.4
+2026-08-20T07:20:38.5120456Z     Checking ordered-float v5.3.0
+2026-08-20T07:20:38.6664396Z     Checking sort-package-json v1.0.0
+2026-08-20T07:20:38.7421890Z     Checking hashlink v0.12.0
+2026-08-20T07:20:38.7799901Z     Checking glob v0.3.3
+2026-08-20T07:20:38.9040517Z     Checking simd-adler32 v0.3.9
+2026-08-20T07:20:38.9202057Z     Checking oxc-toml v0.14.6
+2026-08-20T07:20:38.9927154Z     Checking winnow v1.0.3
+2026-08-20T07:20:39.1251579Z     Checking miniz_oxide v0.8.9
+2026-08-20T07:20:39.1832996Z     Checking toml_parser v1.1.3+spec-1.1.0
+2026-08-20T07:20:39.2256804Z     Checking saphyr v0.0.11
+2026-08-20T07:20:39.3525335Z     Checking humansize v2.1.3
+2026-08-20T07:20:39.3926886Z     Checking ciborium v0.2.2
+2026-08-20T07:20:39.6946422Z     Checking website_common v0.0.0 (/home/runner/work/oxc/oxc/tasks/website_common)
+2026-08-20T07:20:39.7704571Z     Checking oxc_tasks_transform_checker v0.0.0 (/home/runner/work/oxc/oxc/tasks/transform_checker)
+2026-08-20T07:20:39.8048196Z    Compiling oxc_transform_relay_napi v0.144.0 (/home/runner/work/oxc/oxc/napi/transform-relay)
+2026-08-20T07:20:39.8760723Z    Compiling oxc_transform_napi v0.146.0 (/home/runner/work/oxc/oxc/napi/transform)
+2026-08-20T07:20:39.8937691Z    Compiling oxc_parser_napi v0.146.0 (/home/runner/work/oxc/oxc/napi/parser)
+2026-08-20T07:20:39.9695165Z    Compiling oxc_codegen_conformance v0.0.0 (/home/runner/work/oxc/oxc/tasks/codegen_conformance)
+2026-08-20T07:20:39.9925428Z    Compiling oxc_minify_napi v0.146.0 (/home/runner/work/oxc/oxc/napi/minify)
+2026-08-20T07:20:40.0725211Z    Compiling oxc_playground_napi v0.0.1 (/home/runner/work/oxc/oxc/napi/playground)
+2026-08-20T07:20:40.0804621Z    Compiling oxc_transform_react_napi v0.143.0 (/home/runner/work/oxc/oxc/napi/transform-react)
+2026-08-20T07:20:40.1756993Z     Checking toml_datetime v1.1.1+spec-1.1.0
+2026-08-20T07:20:40.2437023Z     Checking serde_spanned v1.1.1
+2026-08-20T07:20:40.2637575Z     Checking colored v3.1.1
+2026-08-20T07:20:40.2867041Z     Checking toml_writer v1.1.2+spec-1.1.0
+2026-08-20T07:20:40.3472315Z     Checking oorandom v11.1.5
+2026-08-20T07:20:40.3593426Z     Checking cast v0.3.0
+2026-08-20T07:20:40.3734124Z     Checking toml v1.1.4+spec-1.1.0
+2026-08-20T07:20:40.4123413Z     Checking criterion2 v3.0.4
+2026-08-20T07:20:40.5323168Z     Checking phf_codegen v0.14.0
+2026-08-20T07:20:40.5701184Z     Checking flate2 v1.1.9
+2026-08-20T07:20:40.7213444Z     Checking encoding_rs_io v0.1.8
+2026-08-20T07:20:40.7791448Z  Documenting oxc_type_checker v0.138.0 (/home/runner/work/oxc/oxc/crates/oxc_type_checker)
+2026-08-20T07:20:40.9220494Z     Checking oxc_type_checker v0.138.0 (/home/runner/work/oxc/oxc/crates/oxc_type_checker)
+2026-08-20T07:20:41.1966543Z     Checking similar-asserts v2.0.0
+2026-08-20T07:20:41.2487573Z     Checking oxc_relay v0.144.0 (/home/runner/work/oxc/oxc/crates/oxc_relay)
+2026-08-20T07:20:41.3470097Z     Checking oxc_lexer v0.139.0 (/home/runner/work/oxc/oxc/crates/oxc_lexer)
+2026-08-20T07:20:41.7866355Z  Documenting oxc_coverage v0.0.0 (/home/runner/work/oxc/oxc/tasks/coverage)
+2026-08-20T07:20:42.1489304Z  Documenting website_formatter v0.0.0 (/home/runner/work/oxc/oxc/tasks/website_formatter)
+2026-08-20T07:20:42.4538996Z  Documenting oxc_transform_relay_napi v0.144.0 (/home/runner/work/oxc/oxc/napi/transform-relay)
+2026-08-20T07:20:42.9165158Z  Documenting oxc_minsize v0.0.0 (/home/runner/work/oxc/oxc/tasks/minsize)
+2026-08-20T07:20:43.1489872Z  Documenting oxc_ast_tools v0.0.0 (/home/runner/work/oxc/oxc/tasks/ast_tools)
+2026-08-20T07:20:43.2885736Z  Documenting oxc_transform_napi v0.146.0 (/home/runner/work/oxc/oxc/napi/transform)
+2026-08-20T07:20:43.7325126Z  Documenting oxc_parser_napi v0.146.0 (/home/runner/work/oxc/oxc/napi/parser)
+2026-08-20T07:20:44.1719821Z  Documenting oxc_codegen_conformance v0.0.0 (/home/runner/work/oxc/oxc/tasks/codegen_conformance)
+2026-08-20T07:20:44.5771965Z  Documenting oxc_minify_napi v0.146.0 (/home/runner/work/oxc/oxc/napi/minify)
+2026-08-20T07:20:44.8085719Z  Documenting oxc_transform_react_napi v0.143.0 (/home/runner/work/oxc/oxc/napi/transform-react)
+2026-08-20T07:20:44.8926119Z  Documenting oxc_ast_macros v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_ast_macros)
+2026-08-20T07:20:45.1787912Z  Documenting oxc_macros v0.0.0 (/home/runner/work/oxc/oxc/crates/oxc_macros)
+2026-08-20T07:20:45.3521041Z  Documenting oxc_transform_conformance v0.0.0 (/home/runner/work/oxc/oxc/tasks/transform_conformance)
+2026-08-20T07:20:45.5402470Z  Documenting oxc_compat_data v0.0.0 (/home/runner/work/oxc/oxc/tasks/compat_data)
+2026-08-20T07:20:45.6133501Z  Documenting oxc_track_memory_allocations v0.0.0 (/home/runner/work/oxc/oxc/tasks/track_memory_allocations)
+2026-08-20T07:20:46.2292398Z  Documenting oxfmt v0.64.0 (/home/runner/work/oxc/oxc/apps/oxfmt)
+2026-08-20T07:20:46.3593297Z  Documenting oxc_formatter_yaml v0.64.0 (/home/runner/work/oxc/oxc/crates/oxc_formatter_yaml)
+2026-08-20T07:20:46.3968292Z  Documenting oxc_formatter_css v0.64.0 (/home/runner/work/oxc/oxc/crates/oxc_formatter_css)
+2026-08-20T07:20:46.8236173Z  Documenting rulegen v0.0.0 (/home/runner/work/oxc/oxc/tasks/rulegen)
+2026-08-20T07:20:46.9346506Z  Documenting oxc_linter_codegen v0.0.0 (/home/runner/work/oxc/oxc/tasks/linter_codegen)
+2026-08-20T07:20:47.3001536Z  Documenting oxc_formatter_graphql v0.64.0 (/home/runner/work/oxc/oxc/crates/oxc_formatter_graphql)
+2026-08-20T07:20:47.6307732Z  Documenting website_common v0.0.0 (/home/runner/work/oxc/oxc/tasks/website_common)
+2026-08-20T07:20:47.7467428Z  Documenting oxc_formatter_json v0.64.0 (/home/runner/work/oxc/oxc/crates/oxc_formatter_json)
+2026-08-20T07:20:47.8352216Z  Documenting oxc_language_server v1.41.0 (/home/runner/work/oxc/oxc/crates/oxc_language_server)
+2026-08-20T07:20:48.0791931Z  Documenting oxc_linter v1.79.0 (/home/runner/work/oxc/oxc/crates/oxc_linter)
+2026-08-20T07:20:48.4460026Z  Documenting oxc_formatter v0.64.0 (/home/runner/work/oxc/oxc/crates/oxc_formatter)
+2026-08-20T07:20:48.6781714Z  Documenting oxc_tasks_common v0.0.0 (/home/runner/work/oxc/oxc/tasks/common)
+2026-08-20T07:20:49.1878279Z  Documenting oxc v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc)
+2026-08-20T07:20:50.4866108Z  Documenting oxc_formatter_tests v0.62.0 (/home/runner/work/oxc/oxc/crates/oxc_formatter_tests)
+2026-08-20T07:20:51.0581628Z  Documenting oxc_config v0.0.0 (/home/runner/work/oxc/oxc/crates/oxc_config)
+2026-08-20T07:20:51.4885199Z  Documenting oxc_transformer_plugins v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_transformer_plugins)
+2026-08-20T07:20:52.2758445Z  Documenting oxc_napi v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_napi)
+2026-08-20T07:20:52.4765066Z  Documenting oxc_minifier v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_minifier)
+2026-08-20T07:20:52.8459101Z  Documenting oxc_transformer v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_transformer)
+2026-08-20T07:20:54.8379539Z  Documenting oxc_relay v0.144.0 (/home/runner/work/oxc/oxc/crates/oxc_relay)
+2026-08-20T07:20:55.3151097Z  Documenting oxc_codegen v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_codegen)
+2026-08-20T07:20:55.5492972Z  Documenting oxc_estree_tokens v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_estree_tokens)
+2026-08-20T07:20:56.2173658Z  Documenting oxc_mangler v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_mangler)
+2026-08-20T07:20:56.2312201Z  Documenting oxc_traverse v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_traverse)
+2026-08-20T07:20:56.9569989Z  Documenting oxc_react_compiler v0.143.0 (/home/runner/work/oxc/oxc/crates/oxc_react_compiler)
+2026-08-20T07:20:58.3789324Z  Documenting website_linter v0.0.0 (/home/runner/work/oxc/oxc/tasks/website_linter)
+2026-08-20T07:20:58.5209470Z  Documenting oxc_playground_napi v0.0.1 (/home/runner/work/oxc/oxc/napi/playground)
+2026-08-20T07:20:59.2399966Z  Documenting oxlint v1.79.0 (/home/runner/work/oxc/oxc/apps/oxlint)
+2026-08-20T07:20:59.7409011Z  Documenting oxc_benchmark v0.0.0 (/home/runner/work/oxc/oxc/tasks/benchmark)
+2026-08-20T07:20:59.9013533Z  Documenting oxc_track_linter_timings v0.0.0 (/home/runner/work/oxc/oxc/tasks/track_linter_timings)
+2026-08-20T07:21:00.2747567Z  Documenting oxc_tasks_transform_checker v0.0.0 (/home/runner/work/oxc/oxc/tasks/transform_checker)
+2026-08-20T07:21:01.0066368Z  Documenting oxc_isolated_declarations v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_isolated_declarations)
+2026-08-20T07:21:01.0465247Z  Documenting oxc_semantic v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_semantic)
+2026-08-20T07:21:01.0831795Z  Documenting oxc_parser v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_parser)
+2026-08-20T07:21:01.7413953Z  Documenting oxc_ecmascript v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_ecmascript)
+2026-08-20T07:21:01.8799358Z  Documenting oxc_lexer v0.139.0 (/home/runner/work/oxc/oxc/crates/oxc_lexer)
+2026-08-20T07:21:02.0382191Z  Documenting oxc_jsdoc v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_jsdoc)
+2026-08-20T07:21:02.1506108Z  Documenting oxc_ast_visit v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_ast_visit)
+2026-08-20T07:21:02.4920651Z  Documenting oxc_cfg v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_cfg)
+2026-08-20T07:21:02.5747168Z  Documenting oxc_compat v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_compat)
+2026-08-20T07:21:02.6221001Z  Documenting oxc_ast v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_ast)
+2026-08-20T07:21:03.1143030Z  Documenting oxc_regular_expression v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_regular_expression)
+2026-08-20T07:21:03.2672626Z  Documenting oxc_syntax v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_syntax)
+2026-08-20T07:21:03.5746310Z  Documenting oxc_formatter_core v0.64.0 (/home/runner/work/oxc/oxc/crates/oxc_formatter_core)
+2026-08-20T07:21:03.7663801Z  Documenting oxc_diagnostics v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_diagnostics)
+2026-08-20T07:21:03.9711415Z  Documenting oxc_span v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_span)
+2026-08-20T07:21:04.3194615Z  Documenting oxc_str v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_str)
+2026-08-20T07:21:04.3342029Z  Documenting oxc_allocator v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_allocator)
+2026-08-20T07:21:04.4608068Z  Documenting oxc_estree v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_estree)
+2026-08-20T07:21:04.7954611Z  Documenting oxc_data_structures v0.146.0 (/home/runner/work/oxc/oxc/crates/oxc_data_structures)
+2026-08-20T07:21:05.7138312Z     Finished `dev` profile [unoptimized] target(s) in 1m 02s
+2026-08-20T07:21:05.7475991Z      Merging 67 docs for host
+2026-08-20T07:21:08.0405145Z     Finished documentation merge in 2.29s
+2026-08-20T07:21:08.0409555Z    Generated /home/runner/work/oxc/oxc/target/doc/oxc/index.html and 66 other files
+2026-08-20T07:21:08.0666478Z Post job cleanup.
+2026-08-20T07:21:08.2119751Z /home/runner/.cargo/registry: cached
+2026-08-20T07:21:08.2119980Z /home/runner/.cargo/git: cached
+2026-08-20T07:21:08.2120297Z ./target: cached
+2026-08-20T07:21:08.2120555Z /home/runner/.cargo/.global-cache: cached
+2026-08-20T07:21:08.2120737Z /home/runner/.rustup: cached
+2026-08-20T07:21:08.2273868Z Cleaning up orphan processes
